@@ -14,9 +14,10 @@ class DefaultController extends AbstractController
      */
     public function home(): JsonResponse
     {
-        return new JsonResponse([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/DefaultController.php',
-        ], 200);
+        $videoJson = file_get_contents('./Vid.json');
+        $videos = json_decode($videoJson, true);
+
+        return new JsonResponse($videos);
+
     }
 }

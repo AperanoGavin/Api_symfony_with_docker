@@ -2,7 +2,9 @@ FROM php:apache
 WORKDIR /var/www
 
 RUN  apt-get update && apt-get install \
-     nano 
+     nano \
+      -y wget \
+      -y git \
 RUN groupadd -g 1000 www 
 
 RUN useradd -u 1000 -g www www
