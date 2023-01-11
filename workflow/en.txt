@@ -1,0 +1,2 @@
+composer require symfony/http-foundation
+apt-install git
