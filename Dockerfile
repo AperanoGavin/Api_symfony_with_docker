@@ -1,5 +1,5 @@
 FROM php:apache
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 RUN  apt-get update && apt-get install \
      nano \
@@ -15,6 +15,6 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 USER  www
 
-COPY  --chown=www:www  . /var/www
+COPY  --chown=www:www  . /var/www/html
 
-COPY . /var/www
+COPY . /var/www/html
